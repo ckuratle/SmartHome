@@ -1,0 +1,894 @@
+[
+    {
+        "id": "1d2beb58.13dfe5",
+        "type": "tab",
+        "label": "Home",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1a05360c.9c284a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a5cfa532.9025",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "80b332b9.5c6538",
+        "type": "ui_group",
+        "name": "Klima",
+        "tab": "a5cfa532.9025",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bfb0ac81.82743",
+        "type": "ui_group",
+        "name": "PV",
+        "tab": "a5cfa532.9025",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "620cd54c.471704",
+        "type": "ui_group",
+        "name": "Solar",
+        "tab": "a5cfa532.9025",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d9453404.2e8f28",
+        "type": "mqtt-broker",
+        "name": "Dashboard",
+        "broker": "192.168.1.3",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "46c06640.07347",
+        "type": "ui_group",
+        "name": "Group 4",
+        "tab": "a5cfa532.9025",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "a76ff64c.db7268",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp SRF",
+        "topic": "swiss-weather-api.0.forecast.day.day0.00:00:00.TX_C",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "f9881ba1.ec85c8",
+                "dd447d92.651028",
+                "a79f16b1.fa2298"
+            ]
+        ]
+    },
+    {
+        "id": "f9881ba1.ec85c8",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp SRF",
+        "group": "80b332b9.5c6538",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Max SRF",
+        "format": "{{value}} °C",
+        "min": "-20",
+        "max": "35",
+        "colors": [
+            "#49bdee",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 530,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dd447d92.651028",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp SRF",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8c66d039.44465",
+        "type": "comment",
+        "z": "1d2beb58.13dfe5",
+        "name": "Klima",
+        "info": "",
+        "x": 310,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c1fbb77c.bb6dd8",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Aktuelle Temp 1",
+        "topic": "netatmo-crawler.0.stationData.1.temperature",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "8bfadb6f.8a4f78",
+                "33846d0d.6a9992"
+            ]
+        ]
+    },
+    {
+        "id": "8bfadb6f.8a4f78",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Act Temp",
+        "group": "80b332b9.5c6538",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Aktuell",
+        "format": "{{value}} °C",
+        "min": "-20",
+        "max": "35",
+        "colors": [
+            "#41c8c6",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 520,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2cab9cea.3d4894",
+        "type": "mqtt in",
+        "z": "1d2beb58.13dfe5",
+        "name": "mqtt Dash",
+        "topic": "\\Dashboard",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d9453404.2e8f28",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 80,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa27e32d.a12e4",
+        "type": "comment",
+        "z": "1d2beb58.13dfe5",
+        "name": "Solar",
+        "info": "",
+        "x": 330,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8e3bb632.a94dc8",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "HeuteWirdEsWarm dss",
+        "topic": "digitalstrom.0.apartment.userStates.1564301299",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 120,
+        "y": 600,
+        "wires": [
+            [
+                "3917a28a.a79a5e"
+            ]
+        ]
+    },
+    {
+        "id": "10cda012.7c144",
+        "type": "ioBroker out",
+        "z": "1d2beb58.13dfe5",
+        "name": "WirdWarm dss",
+        "topic": "digitalstrom.0.apartment.userStates.1564301299",
+        "ack": "false",
+        "autoCreate": "false",
+        "stateName": "",
+        "role": "",
+        "payloadType": "",
+        "readonly": "",
+        "stateUnit": "",
+        "stateMin": "",
+        "stateMax": "",
+        "x": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a79f16b1.fa2298",
+        "type": "function",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Forcast",
+        "func": "//if (msg.payload == \"\") return null;\nif (parseInt(msg.payload) >= 23)\n{msg.payload = \"active\";\n    return msg;\n}\nelse \n{msg.payload = \"inactive\";\nreturn msg;}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "b46f85d1.f56358"
+            ]
+        ]
+    },
+    {
+        "id": "ff2844d1.d17748",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3917a28a.a79a5e",
+        "type": "ui_switch",
+        "z": "1d2beb58.13dfe5",
+        "name": "WirdWarm dss",
+        "label": "Ist Heiss dss",
+        "tooltip": "",
+        "group": "80b332b9.5c6538",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "active",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "inactive",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 400,
+        "y": 600,
+        "wires": [
+            [
+                "10cda012.7c144",
+                "ff2844d1.d17748"
+            ]
+        ]
+    },
+    {
+        "id": "d5e1be25.f5a9a",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Aktuelle Temp 2",
+        "topic": "netatmo-crawler.0.stationData.2.temperature",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "33846d0d.6a9992"
+            ]
+        ]
+    },
+    {
+        "id": "27865da9.b7ddc2",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Alle Akt Temp",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "33846d0d.6a9992",
+        "type": "join",
+        "z": "1d2beb58.13dfe5",
+        "name": "Alle Akt Temp",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1800",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "27865da9.b7ddc2"
+            ]
+        ]
+    },
+    {
+        "id": "f8bd80f1.91d6c",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp Under",
+        "topic": "weatherunderground.0.forecast.0d.tempMax",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "e228fa84.2fed68",
+                "4cab68ad.2f93e8",
+                "a79f16b1.fa2298"
+            ]
+        ]
+    },
+    {
+        "id": "e228fa84.2fed68",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp Under",
+        "group": "80b332b9.5c6538",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Max Under",
+        "format": "{{value}} °C",
+        "min": "-20",
+        "max": "35",
+        "colors": [
+            "#49bdee",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4cab68ad.2f93e8",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Max Temp Under",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "94e2aa39.465c48",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Ist Heiss IoBroker",
+        "topic": "digitalstrom.0.apartment.userStates.1624382328",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 480,
+        "wires": [
+            [
+                "5c071953.a7d328"
+            ]
+        ]
+    },
+    {
+        "id": "64c40e4e.66437",
+        "type": "ioBroker out",
+        "z": "1d2beb58.13dfe5",
+        "name": "Ist Heiss IoBroker",
+        "topic": "digitalstrom.0.apartment.userStates.1624382328",
+        "ack": "false",
+        "autoCreate": "false",
+        "stateName": "",
+        "role": "",
+        "payloadType": "",
+        "readonly": "",
+        "stateUnit": "",
+        "stateMin": "",
+        "stateMax": "",
+        "x": 610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b46f85d1.f56358",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Check ist Heiss",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "91b5536e.2c46b",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Ist Heiss IoBroker",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5c071953.a7d328",
+        "type": "ui_switch",
+        "z": "1d2beb58.13dfe5",
+        "name": "",
+        "label": "IstHeiss IoBroker",
+        "tooltip": "",
+        "group": "80b332b9.5c6538",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "active",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "inactive",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 350,
+        "y": 480,
+        "wires": [
+            [
+                "64c40e4e.66437",
+                "91b5536e.2c46b"
+            ]
+        ]
+    },
+    {
+        "id": "6dae053a.3f324c",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Solar Temp SE",
+        "topic": "myvbus.0.00427B0010.17019.000010427B10010000020",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 820,
+        "wires": [
+            [
+                "8db12ac0.6d2df8"
+            ]
+        ]
+    },
+    {
+        "id": "28650d29.0d73f2",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Pumpe Süd Ost",
+        "topic": "myvbus.0.00427B0010.17019.000010427B10010000810_1",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 880,
+        "wires": [
+            [
+                "81c1d48a.41dc18"
+            ]
+        ]
+    },
+    {
+        "id": "8db12ac0.6d2df8",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Solar SE Temp",
+        "group": "620cd54c.471704",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Süd Ost",
+        "format": "{{value}} °C",
+        "min": "0",
+        "max": "75",
+        "colors": [
+            "#41c8c6",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 600,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "81c1d48a.41dc18",
+        "type": "ui_text",
+        "z": "1d2beb58.13dfe5",
+        "group": "620cd54c.471704",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "Pumpe SO",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 590,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "887e7d37.d1d3a",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Solar Temp SW",
+        "topic": "myvbus.0.00427B0010.17019.000010427B10010000420",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 960,
+        "wires": [
+            [
+                "89fd82b3.0068d"
+            ]
+        ]
+    },
+    {
+        "id": "58c6a4e6.4e8a5c",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Pumpe Süd Ost",
+        "topic": "myvbus.0.00427B0010.17019.000010427B10010001210_1",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 100,
+        "y": 1020,
+        "wires": [
+            [
+                "46c41f30.b7df6",
+                "1e4a7d30.ba2903"
+            ]
+        ]
+    },
+    {
+        "id": "89fd82b3.0068d",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Solar SW Temp",
+        "group": "620cd54c.471704",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Süd West",
+        "format": "{{value}} °C",
+        "min": "0",
+        "max": "75",
+        "colors": [
+            "#41c8c6",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 600,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "46c41f30.b7df6",
+        "type": "ui_text",
+        "z": "1d2beb58.13dfe5",
+        "group": "620cd54c.471704",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "Pumpe SW",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 590,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "1e4a7d30.ba2903",
+        "type": "debug",
+        "z": "1d2beb58.13dfe5",
+        "name": "Pumpe SW",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "3a60db88.c2d974",
+        "type": "ioBroker in",
+        "z": "1d2beb58.13dfe5",
+        "name": "Wärmepumte WW ist",
+        "topic": "stiebel-isg.0.Info.ANLAGE.WARMWASSER.ISTTEMPERATUR",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "x": 120,
+        "y": 1140,
+        "wires": [
+            [
+                "8085e78b.d0f118"
+            ]
+        ]
+    },
+    {
+        "id": "8085e78b.d0f118",
+        "type": "ui_gauge",
+        "z": "1d2beb58.13dfe5",
+        "name": "Warmwasser Temp",
+        "group": "620cd54c.471704",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "",
+        "label": "Warmwasser",
+        "format": "{{value}} °C",
+        "min": "0",
+        "max": "75",
+        "colors": [
+            "#41c8c6",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 610,
+        "y": 1140,
+        "wires": []
+    }
+]
